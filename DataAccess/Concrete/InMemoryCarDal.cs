@@ -43,7 +43,9 @@ namespace DataAccess.Concrete
 
         public List<Car> GetById(int carId)
         {
-            return _cars.Where(c => c.Id == carId).ToList();
+            Car getCarById = null;
+            getCarById = _cars.Where(c => c.Id == carId).First();
+            return _cars;
         }
 
         public void Update(Car car)
